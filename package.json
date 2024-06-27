@@ -1,0 +1,22 @@
+{
+  "name": "justice-template",
+  "type": "module",
+  "version": "0.0.2",
+  "scripts": {
+    "dev": "astro dev --open /",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "latest",
+    "astro": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
+    "prettier-plugin-tailwindcss": "latest"
+  }
+}
