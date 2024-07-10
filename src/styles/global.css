@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Norwester';
+  src: url('/fonts/Norwester.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Font Sizes */
   --step-00: clamp(0.8333rem, 0.8302rem + 0.0153vi, 0.844rem);
@@ -28,7 +44,8 @@
 body {
   font-size: var(--step-0);
   line-height: var(--standard);
-  color: #131313;
+  color: #f8fafc;
+  background-color: #0e0a10;
   overflow-x: clip !important;
   transition-property: all !important;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;

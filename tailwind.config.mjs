@@ -2,16 +2,20 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   important: true,
   blocklist: ['container'],
   experimental: {
     optimizeUniversalDefaults: true,
   },
-	theme: {
-		extend: {
+  theme: {
+    extend: {
       margin: {
         section: 'var(--space-section)',
+      },
+      fontFamily: {
+        roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
+        heading: ['Norwester', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         min: 'var(--step-00)',
@@ -23,8 +27,9 @@ export default {
       colors: {
         light: '#F8FAFC',
         dark: '#131313',
-      }
+        space: '#0e0a10',
+      },
     },
-	},
-	plugins: [],
-}
+  },
+  plugins: [],
+};
