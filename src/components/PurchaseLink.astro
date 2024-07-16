@@ -1,0 +1,13 @@
+---
+const { preload } = Astro.props;
+---
+
+<a
+  href="purchase"
+  class:list={[
+    'rounded-sm border-[1px] border-sw-yellow px-8 py-3 font-semibold text-dark shadow-[inset_0_0_40px_40px_rgb(255,232,31),0_0_0_rgb(255,232,31)] transition-all duration-200 ease-in-out hover:text-sw-yellow hover:shadow-[inset_0_0_10px_rgb(255,232,31),0_0_10px_4px_rgb(255,232,31)]',
+    { 'astro-font-roboto': preload },
+  ]}
+>
+  <slot />
+</a>
