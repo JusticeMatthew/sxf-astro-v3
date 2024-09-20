@@ -15,12 +15,13 @@ export default {
       },
       fontFamily: {
         roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
-        heading: ['Norwester', ...defaultTheme.fontFamily.sans],
+        norwester: ['Norwester', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         min: 'var(--step-00)',
         bread: 'var(--step-0)',
         subtitle: 'var(--step-1)',
+        heading: 'var(--step-3)',
         title: 'var(--step-5)',
         headline: 'var(--step-6)',
       },

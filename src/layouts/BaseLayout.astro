@@ -2,7 +2,10 @@
 import '@/styles/global.css';
 import { AstroFont } from 'astro-font';
 import Header from '@/components/Header.astro';
+import { getImage } from 'astro:assets';
+import bg from '@/assets/landingBG.png';
 
+const bgImg = await getImage({ src: bg, format: 'png' });
 const { title } = Astro.props;
 // const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -71,12 +74,20 @@ const { title } = Astro.props;
         },
       ]}
     />
+    <style define:vars={{ 'bg-image': `url(${bgImg.src})` }}>
+      #bg {
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
   </head>
 
-  <body class="font-roboto">
+  <body class="font-roboto antialiased">
     <Header />
     <main>
       <slot />
     </main>
+    <div id="bg" class="fixed top-0 z-0 h-screen w-screen"></div>
   </body>
 </html>
