@@ -6,4 +6,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   // site: 'Fill me in',
   integrations: [tailwind(), icon()],
+  experimental: {
+    svg: true,
+  },
 });

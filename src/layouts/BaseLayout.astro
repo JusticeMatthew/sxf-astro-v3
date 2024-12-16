@@ -1,11 +1,11 @@
 ---
-import '@/styles/global.css';
-import { AstroFont } from 'astro-font';
-import Header from '@/components/Header.astro';
-import { getImage } from 'astro:assets';
-import bg from '@/assets/landingBG.png';
+import "$/styles/global.css";
+import { getImage } from "astro:assets";
+import { AstroFont } from "astro-font";
+import Header from "$/molecules/Header.astro";
+import bg from "$/assets/images/landingBG.png";
 
-const bgImg = await getImage({ src: bg, format: 'png' });
+const bgImage = await getImage({ src: bg, format: "png" });
 const { title } = Astro.props;
 // const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -45,42 +45,61 @@ const { title } = Astro.props;
     <AstroFont
       config={[
         {
-          name: 'Norwester',
+          name: "Norwester",
           src: [
             {
-              style: 'normal',
-              weight: '400',
-              path: 'fonts/Norwester.woff2',
+              style: "normal",
+              weight: "400",
+              path: "fonts/Norwester.woff2",
             },
           ],
           preload: true,
-          display: 'swap',
-          selector: '.astro-font-norwester',
-          fallback: 'serif',
+          display: "swap",
+          selector: ".astro-font-norwester",
+          fallback: "serif",
         },
         {
-          name: 'Roboto',
+          name: "Roboto",
           src: [
             {
-              style: 'normal',
-              weight: '400',
-              path: 'fonts/Roboto.woff2',
+              style: "normal",
+              weight: "400",
+              path: "fonts/Roboto.woff2",
             },
           ],
           preload: true,
-          display: 'swap',
-          selector: '.astro-font-roboto',
-          fallback: 'sans-serif',
+          display: "swap",
+          selector: ".astro-font-roboto",
+          fallback: "sans-serif",
         },
       ]}
     />
-    <style define:vars={{ 'bg-image': `url(${bgImg.src})` }}>
-      #bg {
-        background-image: var(--bg-image);
-        background-size: cover;
-        background-position: center;
-      }
-    </style>
+    <script>
+      let lastKnownScrollY = 0;
+      let ticking = false;
+
+      const handleScroll = () => {
+        lastKnownScrollY = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const bg = document.querySelector<HTMLElement>("#bg");
+            if (bg) {
+              bg.style.transform = `translateY(${-(lastKnownScrollY * 0.2)}px)`;
+            }
+            ticking = false;
+          });
+
+          ticking = true;
+        }
+      };
+
+      document.addEventListener("scroll", handleScroll);
+
+      window.addEventListener("beforeunload", () => {
+        document.removeEventListener("scroll", handleScroll);
+      });
+    </script>
   </head>
 
   <body class="font-roboto antialiased">
@@ -88,6 +107,10 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
-    <div id="bg" class="fixed top-0 z-0 h-screen w-screen"></div>
+    <figure
+      id="bg"
+      style={`background-image: url(${bgImage.src}); will-change: transform`}
+      class="fixed top-0 z-0 h-screen w-screen bg-cover bg-fixed bg-center">
+    </figure>
   </body>
 </html>

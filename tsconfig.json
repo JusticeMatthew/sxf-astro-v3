@@ -3,7 +3,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*", "public/*"]
-    },
+      "$/assets/*": ["src/assets/*"],
+      "$/styles/*": ["src/styles/*"],
+      "$/layouts/*": ["src/layouts/*"],
+      "$/data/*": ["src/data/*"],
+      "$/components/*": ["src/components/*"],
+      "$/atoms/*": ["src/components/atoms/*"],
+      "$/molecules/*": ["src/components/molecules/*"],
+      "$/sections/*": ["src/components/sections/*"]
+    }
   }
 }

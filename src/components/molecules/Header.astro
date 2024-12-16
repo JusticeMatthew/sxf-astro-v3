@@ -1,25 +1,24 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '@/assets/logo.png';
-import PurchaseLink from './PurchaseLink.astro';
+import { Image } from "astro:assets";
+import logo from "$/assets/images/logo.png";
+import PurchaseLink from "$/atoms/PurchaseLink.astro";
 ---
 
 <header
-  class="astro-font-roboto sticky top-0 z-10 -mb-20 h-20 w-full border-b-[1px] border-black bg-black/70 backdrop-blur-lg"
->
+  class="astro-font-roboto sticky top-0 z-50 -mb-20 h-20 w-full border-b-[1px] border-black bg-black/70 backdrop-blur-lg">
   <div class="container flex h-full items-center justify-between">
     <a href="/" class="flex items-center">
       <Image src={logo} alt="SXF logo" width={104} class="rounded-sm" />
-      <div class="ml-4">
-        <p class="astro-font-norwester text-subtitle">SABERXFORCE</p>
-        <p class="text-min">The ultimate saber blade</p>
+      <div class="ml-4 mt-1">
+        <h1 class="astro-font-norwester text-level-1">SABERXFORCE</h1>
+        <p class="text-base">The ultimate saber blade</p>
       </div>
     </a>
     <nav>
       {
         [
-          ['/', 'Home'],
-          ['contact', 'Contact'],
+          ["/", "Home"],
+          ["/contact", "Contact"],
         ].map((link) => (
           <a href={link[0]} class="group relative mr-4 px-4 py-2">
             {link[1]}

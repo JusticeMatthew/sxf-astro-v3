@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { content, title, icon, heading, link } = Astro.props.feature;
+---
+
+<div class="group flex max-w-[45ch] flex-col first:max-w-[50ch]">
+  <p
+    class="flex h-8 items-end gap-3 font-norwester uppercase group-first:gap-4 group-first:text-level-2">
+    <Icon name={icon} />
+    <span class="leading-none">{heading}</span>
+  </p>
+  <h2 class="my-7 text-level-4 group-first:text-level-5">{title}</h2>
+  <p class="text-light/85 group-first:text-level-1">{content}</p>
+  <a href={link.href} class="mt-3 py-4 text-sw-yellow-600 group-first:hidden">
+    {link.text}
+    <Icon name="up-arrow" class="ml-1 inline -translate-y-[2px] rotate-45" />
+  </a>
+</div>
