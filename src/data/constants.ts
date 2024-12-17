@@ -19,18 +19,18 @@ const features = [
       href: "/contact", // Add hashes
     },
     content:
-      "Designed for a seamless fit with most hilts, our blades combine exceptional clarity and the resilience to last through every swing.",
+      "Built from extremely resistant polycarbonate, our blades combine exceptional clarity and the resilience to last through every swing.",
   },
   {
     heading: "Secure",
     title: "A Tether Built for Performance",
     icon: "tether",
     link: {
-      text: "Why we chose paracord",
+      text: "Nylon rope and why we chose it",
       href: "/contact", // Add hashes
     },
     content:
-      "Chosen for its strength, our paracord tether keeps your saber firmly attached, enabling smooth, hands-free movement with complete confidence.",
+      "Chosen for its strength, our nylon rope tether keeps your saber firmly attached, enabling smooth, hands-free movement with complete confidence.",
   },
   {
     heading: "Comfortable",
@@ -41,7 +41,7 @@ const features = [
       href: "/contact", // Add hashes
     },
     content:
-      "Our wristband, woven from the same high-quality paracord as the tether, offers a comfortable yet secure fit, ensuring you and your saber remain one.",
+      "Our wristbands are woven from high-quality paracord, providing a comfortable yet secure fit, ensuring you and your saber remain one.",
   },
 ];
 

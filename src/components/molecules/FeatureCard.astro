@@ -6,7 +6,7 @@ const { content, title, icon, heading, link } = Astro.props.feature;
 
 <div class="group flex max-w-[45ch] flex-col first:max-w-[50ch]">
   <p
-    class="flex h-8 items-end gap-3 font-norwester uppercase group-first:gap-4 group-first:text-level-2">
+    class="flex h-8 items-end gap-3 font-norwester uppercase group-first:hidden">
     <Icon name={icon} />
     <span class="leading-none">{heading}</span>
   </p>
