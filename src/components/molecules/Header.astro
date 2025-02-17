@@ -5,7 +5,7 @@ import PurchaseLink from "$/atoms/PurchaseLink.astro";
 ---
 
 <header
-  class="astro-font-roboto sticky top-0 z-50 -mb-20 h-20 w-full border-b-[1px] border-black bg-black/70 backdrop-blur-lg">
+  class="astro-font-roboto sticky top-0 z-50 -mb-20 h-20 w-full border-b border-black bg-black/70 backdrop-blur backdrop-brightness-75">
   <div class="container flex h-full items-center justify-between">
     <a href="/" class="flex items-center">
       <Image src={logo} alt="SXF logo" width={104} class="rounded-sm" />
@@ -22,11 +22,11 @@ import PurchaseLink from "$/atoms/PurchaseLink.astro";
         ].map((link) => (
           <a href={link[0]} class="group relative mr-4 px-4 py-2">
             {link[1]}
-            <span class="absolute bottom-0 left-2 mx-auto h-[2px] w-[0%] bg-sw-yellow transition-all group-hover:w-[80%]" />
+            <span class="bg-sw-yellow absolute bottom-0 left-2 mx-auto h-0.5 w-[0%] transition-all group-hover:w-[80%]" />
           </a>
         ))
       }
-      <PurchaseLink preload>Buy now</PurchaseLink>
+      <PurchaseLink preload styles="px-6 py-2">Buy now</PurchaseLink>
     </nav>
   </div>
 </header>

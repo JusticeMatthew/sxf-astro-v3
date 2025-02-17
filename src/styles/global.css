@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @font-face {
   font-family: "Roboto";
@@ -18,29 +16,53 @@
   font-display: swap;
 }
 
-:root {
-  /* Font Sizes */
-  --step-0: clamp(1rem, 0.9628rem + 0.1802vi, 1.125rem);
-  --step-1: clamp(1.2rem, 1.1109rem + 0.4319vi, 1.4996rem);
-  --step-2: clamp(1.44rem, 1.2738rem + 0.8058vi, 1.999rem);
-  --step-3: clamp(1.728rem, 1.4495rem + 1.3502vi, 2.6647rem);
-  --step-4: clamp(2.0736rem, 1.6341rem + 2.131vi, 3.552rem);
-  --step-5: clamp(2.4883rem, 1.8204rem + 3.2382vi, 4.7348rem);
-  --step-6: clamp(2.986rem, 1.9973rem + 4.7936vi, 6.3115rem);
+@theme {
+  --default-font-family: "Roboto", "sans-serif";
 
-  /* Section Gap */
-  --space-section: clamp(10rem, 7.5327rem + 11.9626vi, 18rem);
+  --font-roboto: "Roboto", "sans-serif";
+  --font-norwester: "Norwester", "display";
+
+  --text-content: clamp(1rem, 0.9628rem + 0.1802vi, 1.125rem);
+  --text-level-1: clamp(1.2rem, 1.1109rem + 0.4319vi, 1.4996rem);
+  --text-level-2: clamp(1.44rem, 1.2738rem + 0.8058vi, 1.999rem);
+  --text-level-3: clamp(1.728rem, 1.4495rem + 1.3502vi, 2.6647rem);
+  --text-level-4: clamp(2.0736rem, 1.6341rem + 2.131vi, 3.552rem);
+  --text-level-5: clamp(2.4883rem, 1.8204rem + 3.2382vi, 4.7348rem);
+  --text-level-6: clamp(2.986rem, 1.9973rem + 4.7936vi, 6.3115rem);
+
+  --color-light: #f8fafc;
+  --color-dark: #131313;
+  --color-space: #0e0a10;
+  --color-sw-yellow-50: #fffbd7;
+  --color-sw-yellow-100: #fff9c2;
+  --color-sw-yellow-200: #fff599;
+  --color-sw-yellow-300: #fff071;
+  --color-sw-yellow-400: #ffec48;
+  --color-sw-yellow: #ffe81f; /* Base 500 */
+  --color-sw-yellow-600: #e6ce00;
+  --color-sw-yellow-700: #ae9c00;
+  --color-sw-yellow-800: #766a00;
+  --color-sw-yellow-900: #3e3700;
+  --color-sw-yellow-950: #221e00;
+
+  --spacing-section: clamp(10rem, 7.5327rem + 11.9626vi, 18rem);
+}
+
+@utility container {
+  max-width: clamp(16rem, 100%, 90rem);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 body {
-  font-size: var(--step-0);
+  font-size: var(--text-content);
   line-height: 1.5;
-  color: #f8fafc;
-  background-color: #0e0a10;
-  overflow-x: clip !important;
-  transition-property: all !important;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
-  transition-duration: 300ms !important;
+  color: var(--color-light);
+  background-color: var(--color-space);
+  overflow-x: clip;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
 
 h1,
@@ -54,18 +76,4 @@ label {
 
 section {
   z-index: 10 !important;
-}
-
-.container {
-  max-width: clamp(16rem, 100%, 90rem);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.balanced {
-  text-wrap: balance;
-}
-
-.pretty {
-  text-wrap: pretty;
 }

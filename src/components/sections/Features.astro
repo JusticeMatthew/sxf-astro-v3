@@ -1,10 +1,10 @@
 ---
+import { features } from "$/constants/index";
 import FeatureCard from "$/molecules/FeatureCard.astro";
-import { features } from "$/data/constants";
 ---
 
-<section class="relative w-screen bg-space text-light">
-  <div class="container grid w-full grid-cols-12 gap-24 py-section">
+<section class="bg-space text-light relative w-screen">
+  <div class="py-section container grid w-full grid-cols-12 gap-24">
     <div class="col-span-6 space-y-[40vh]">
       {features.map((feature) => <FeatureCard feature={feature} />)}
     </div>
